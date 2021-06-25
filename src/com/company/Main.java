@@ -2,6 +2,7 @@ package com.company;
 
 public class Main {
     public static void main(String[] args) {
+        //Работа с консолью для проверки
         Factory factory = new Factory();
         Store store1 = new Store();
         factory.AddProducts(10);
