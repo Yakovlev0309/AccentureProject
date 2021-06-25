@@ -6,11 +6,13 @@ public class Main {
         Factory factory = new Factory();
         Store store1 = new Store();
         factory.AddProducts(10);
+
         System.out.println("Изначальные товары склада завода:");
         for (byte i = 0; i < factory.Storage().CountOfProducts(); i++) {
             System.out.println(factory.Storage().Products().get(i).GetId());
         }
-        factory.SendToStore(store1, 5);
+
+        factory.SendToStoreStorage(store1, 5);
         store1.TakeFromStorage(3);
 
         System.out.println("Товары склада завода:");

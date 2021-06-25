@@ -7,7 +7,7 @@ public class Storage {
     private int idCount;
     public Storage() {
         idCount = 0;
-        products = new ArrayList<Product>();
+        products = new ArrayList<>();
     }
     //Список товаров
     public ArrayList<Product> Products() {
@@ -17,7 +17,7 @@ public class Storage {
     public int CountOfProducts() {
         return products.size();
     }
-    //Добавление продуктов в список
+    //Добавление товаров в список
     public void AddProducts(int count) {
         for (byte i = 0; i < count; i++) {
             idCount++;
