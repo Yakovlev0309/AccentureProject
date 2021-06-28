@@ -1,31 +1,16 @@
-package com.company;
+package sample;
 
 import java.util.ArrayList;
 
-public class Store {
-    private ArrayList<Product> forSaleProducts;
-    private Storage storage;
-    public Store() {
-        storage = new Storage();
-        forSaleProducts = new ArrayList<>();
-    }
-    //Склад магазина
-    public Storage Storage() {
-        return storage;
-    }
-    public ArrayList<Product> ForSaleProducts() {
-        return forSaleProducts;
-    }
-    public int CountOfProductsForSale() {
-        return forSaleProducts.size();
-    }
-    //Взять товары со склада
-    public void TakeFromStorage(int count) {
+public class Store extends Building {
+    @Override
+    public void AddProducts(int count) {
         for (byte i = 0; i < count; i++) {
-            forSaleProducts.add(Storage().Products().get(i));
+            //Берём товары со склада
         }
-        for (byte i = 0; i < count; i++) {
-            Storage().Products().remove(0);
-        }
+    }
+    @Override
+    public void SendTo(Building building, int count) {
+        //Zdes nichego ne proishodit
     }
 }

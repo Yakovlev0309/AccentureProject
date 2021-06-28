@@ -1,4 +1,4 @@
-package com.company;
+package sample;
 
 public class Product {
     //Уникальный номер для каждого продукта
@@ -9,5 +9,8 @@ public class Product {
     //Метод доступа к уникальному номеру
     public int GetId() {
         return id;
+    }
+    public void SetNewLocation(Building building) {
+        //Products.ChangeLocation(this, building);
     }
 }

@@ -1,37 +1,18 @@
-package com.company;
+package sample;
 
-import java.util.ArrayList;
-
-public class Storage {
-    private ArrayList<Product> products;
-    private int idCount;
-    public Storage() {
-        idCount = 0;
-        products = new ArrayList<>();
-    }
-    //Список товаров
-    public ArrayList<Product> Products() {
-        return products;
-    }
-    //Количество товаров
-    public int CountOfProducts() {
-        return products.size();
-    }
-    //Добавление товаров в список
+public class Storage extends Building {
+    @Override
     public void AddProducts(int count) {
         for (byte i = 0; i < count; i++) {
-            idCount++;
-            products.add(new Product(idCount + 1000));
+            //Берём товары с завода
         }
     }
-    /*
-    //Можно сделать такой обобщённый метод
-    public void MoveProducts(Building from, Building to, int count){
-        //Взять товары
-        //from.Take(count)
-
-        //Добавить товары
-        //to.AddProducts(count);
+    @Override
+    public void SendTo(Building building, int count) {
+        for (byte i = 0; i < count; i++) {
+            building.Products().add(Products().get(i));
+            Products().remove(0);
+            Products().get(i).SetNewLocation(building);
+        }
     }
-     */
 }

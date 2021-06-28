@@ -1,31 +1,23 @@
-package com.company;
+package sample;
 
-public class Main {
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+public class Main extends Application {
+
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        primaryStage.setTitle("Авторизация");
+        primaryStage.setScene(new Scene(root, 1109, 555));
+        primaryStage.show();
+    }
+
+
     public static void main(String[] args) {
-        //Работа с консолью для проверки
-        Factory factory = new Factory();
-        Store store1 = new Store();
-        factory.AddProducts(10);
-
-        System.out.println("Изначальные товары склада завода:");
-        for (byte i = 0; i < factory.Storage().CountOfProducts(); i++) {
-            System.out.println(factory.Storage().Products().get(i).GetId());
-        }
-
-        factory.SendToStoreStorage(store1, 5);
-        store1.TakeFromStorage(3);
-
-        System.out.println("Товары склада завода:");
-        for (byte i = 0; i < factory.Storage().CountOfProducts(); i++) {
-            System.out.println(factory.Storage().Products().get(i).GetId());
-        }
-        System.out.println("Товары магазина на складе:");
-        for (byte i = 0; i < store1.Storage().CountOfProducts(); i++) {
-            System.out.println(store1.Storage().Products().get(i).GetId());
-        }
-        System.out.println("Товары магазина на витрине:");
-        for (byte i = 0; i < store1.CountOfProductsForSale(); i++) {
-            System.out.println(store1.ForSaleProducts().get(i).GetId());
-        }
+        launch(args);
     }
 }
